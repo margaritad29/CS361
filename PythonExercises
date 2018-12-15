@@ -1,0 +1,105 @@
+# exercise 5:
+found = 0
+x = 11
+while found < 20:
+  if (x % 5 == 0) or (x % 7 == 0) or (x % 11 == 0):
+    print (x)
+    found += 1
+  x +=1
+
+
+#exercise 6:
+#part a:
+ef is_prime(n):  
+  # prime has to be greater than 1
+  if n > 1:
+    for each in range(2, n):
+        if(n % each) == 0:
+          return False
+        else:
+          return True
+        break #stop loop from checking forever
+  else:
+    return False
+    
+ 
+    
+print(is_prime(13))
+print(is_prime(6))
+print(is_prime(5))
+print(is_prime(22))
+  
+
+#part b:
+
+
+
+
+#exercise 7:
+#part a:
+def print_list(l):
+  for each in l:
+    print(each)
+    
+print_list([1,2,3,5])
+
+#part b:
+def print_reverse(l):
+  for each in l[::-1]:
+    print(each)
+
+print_reverse([1,2,3,5])
+    
+#part c:
+def list_length(l):
+  length = 0
+  for each in l:
+    length += 1
+  print(length)
+  
+list_length([1,2,3,5])
+
+
+
+#exercise 8:
+def set_first_elem_to_zero(l):
+  l[0] = 0;
+  
+set_first_elem_to_zero(a)
+print(a)
+
+
+
+#exercise 9:
+def make_list(l):
+  elements = []
+  
+  for each in l:
+    for element in each:
+      elements.append(element)
+      
+  return elements
+  
+l = [[1,2],[3,4],[5,6,7]]
+print(make_list(l))
+
+
+
+#exercise 10:
+
+
+
+#exercise 11:
+
+
+
+#exercise 12:
+def fib(n):
+  #f(0)=0 / f(1)=1
+  if n == 0 or n == 1:
+    return n
+  else:
+    return fib(n-1) + fib(n-2);
+  
+fib(10)
+
