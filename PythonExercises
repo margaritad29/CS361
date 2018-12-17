@@ -86,11 +86,43 @@ print(make_list(l))
 
 
 #exercise 10:
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plotting
+a = np.arange(0.0, 2.0, 0.01)
+b = (np.sin(a - 2) **2) * np.exp(-a **2)
+
+fig, ax = plt.subplots()
+ax.plot(a, b)
+
+ax.set(xlabel='x-axis', ylabel='y-axis', title='Function')
+#fig.savefig("test.png")
+plt.show()
 
 
 
 #exercise 11:
 
+#iterative
+def mult_list(l):
+  result = 1 
+
+  for each in l:
+    result *= each
+    
+  return result
+
+#recursive
+def mult_list(l):
+	if len(l) == 1:
+		return l[0]
+	else:
+		return mult_list([l[0]])  * mult_list(l[1:])
+ 
+l = [1,2,3,4,5,6]
+mult_list(l)
 
 
 #exercise 12:
@@ -103,3 +135,4 @@ def fib(n):
   
 fib(10)
 
+exercise 13:
