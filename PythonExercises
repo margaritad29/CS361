@@ -10,18 +10,14 @@ while found < 20:
 
 #exercise 6:
 #part a:
-ef is_prime(n):  
+def is_prime(n):  
   # prime has to be greater than 1
   if n > 1:
-    for each in range(2, n):
+    for each in range(2, int(n/2)):
         if(n % each) == 0:
           return False
-        else:
-          return True
         break #stop loop from checking forever
-  else:
-    return False
-    
+    return True
  
     
 print(is_prime(13))
@@ -31,9 +27,56 @@ print(is_prime(22))
   
 
 #part b:
+def is_improved_prime(n):
+  if n > 1:
+    if n == 2 or n == 3:
+        return True
+    elif (n-1)%6 == 0 or (n+1)%6 == 0:
+        if(is_prime(n)):
+          return True
+        else:
+          return False
+    else:
+      return False
+
+print(is_improved_prime(13))
+print(is_improved_prime(6))
+print(is_improved_prime(5))
+print(is_improved_prime(22))
+
+#part c:
+#return all prime up to n
+def primes(n):  
+  l = []
+  # prime has to be greater than 1
+  for each in range(n):
+    if(is_improved_prime(each)):
+      l.append(each)
+  
+  return l
+
+    
+print(primes(10))
+
+#part d:
+def get_primes(n):  
+  l = []
+  if n >= 1:
+    #first prime num
+    l.append(2)
+    i = 2
+    x = 3
+    while i <= n:
+      if(is_improved_prime(x)):
+        l.append(x)
+        i+=1
+      x+=2 #only odds will be prime
 
 
+  return l
 
+    
+print(get_primes(14))
 
 #exercise 7:
 #part a:
@@ -136,3 +179,10 @@ def fib(n):
 fib(10)
 
 exercise 13:
+file  = open("emails.txt", "r")
+
+print(re.search('[a-zA-Z]*@[a-zA-Z]*\.[a-zA-Z]*', 'asdfd@asfsd.afs'))
+
+for line in file:
+    email = re.search('[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+', line)
+    print(email)
